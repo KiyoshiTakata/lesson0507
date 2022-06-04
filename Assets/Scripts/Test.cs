@@ -5,6 +5,8 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     [SerializeField]
+    private int BallSpeed = 10;
+    [SerializeField]
     private int index;
     [SerializeField]
     private int a;
@@ -12,7 +14,7 @@ public class Test : MonoBehaviour
     public int b;
     [SerializeField]
     private bool isFlag;
-
+    [SerializeField]
     private Rigidbody rigidBody;
 
     private void Awake()
@@ -34,7 +36,8 @@ public class Test : MonoBehaviour
         // スペースを押したらバウンド止まる
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+            //rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+            rigidBody.velocity = Vector3.up * BallSpeed;
         }
         if(isFlag)
         {
