@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class MapContoroller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //定数
+    public const int MaxStageCount = 10;
+    public const float StageWideth = 25f;
+
+    //プレハブ格納先
+    [SerializeField]
+    private Transform parent;
+
+    //可変長配列：リスト
+
     void Start()
     {
         
